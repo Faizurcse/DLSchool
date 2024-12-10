@@ -24,41 +24,31 @@ import { PiCaretUpDownFill } from 'react-icons/pi';
 
 const columns = [
   { id: 'title', label: 'Title', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
-  { id: 'description', label: 'Description', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
-  { id: 'createdDate', label: 'Created Date', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
-  { id: 'createdBy', label: 'Created By', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
+   { id: 'description', label: 'Description', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
+  // { id: 'createdDate', label: 'Created Date', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
+  // { id: 'createdBy', label: 'Created By', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
   { id: 'assignedTo', label: 'Assigned To', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
-  { id: 'followUpDate', label: 'Follow Up Date', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
+  { id: 'dueDate', label: 'Due Date', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
   { id: 'status', label: 'Status', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
   { id: 'priority', label: 'Priority', align: 'center', minWidth: 170, icon: PiCaretUpDownFill },
   { id: 'comments', label: 'Comments', align: 'center', minWidth: 170, icon: PiCaretUpDownFill }
 ];
 
-function createData(id, title, description, createdDate, createdBy, assignedTo, followUpDate, status, priority, comments) {
-  return { id, title, description, createdDate, createdBy, assignedTo, followUpDate, status, priority, comments };
+function createData(id, title, description,  assignedTo, dueDate, status, priority, comments) {
+  return { id, title, description,  assignedTo, dueDate, status, priority, comments };
 }
 
 const rows = [
-  createData(1, 'Task 1', 'Description 1', '2024-12-05', 'John Doe', 'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
-  createData(2, 'Task 2', 'Description 2', '2024-12-06', 'Jane Smith', 'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
-  createData(3, 'Task 3', 'Description 3', '2024-12-07', 'Alex Brown', 'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
-  createData(4, 'Task 4', 'Description 4', '2024-12-08', 'Lucy Green', 'https://i.pravatar.cc/150?img=8', '2024-12-13', 'Pending', 'High', 'Some more comments'),
-  createData(1, 'Task 1', 'Description 1', '2024-12-05', 'John Doe', 'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
-  createData(2, 'Task 2', 'Description 2', '2024-12-06', 'Jane Smith', 'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
-  createData(3, 'Task 3', 'Description 3', '2024-12-07', 'Alex Brown', 'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
-  createData(4, 'Task 4', 'Description 4', '2024-12-08', 'Lucy Green', 'https://i.pravatar.cc/150?img=8', '2024-12-13', 'Pending', 'High', 'Some more comments'),
-  createData(1, 'Task 1', 'Description 1', '2024-12-05', 'John Doe', 'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
-  createData(2, 'Task 2', 'Description 2', '2024-12-06', 'Jane Smith', 'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
-  createData(3, 'Task 3', 'Description 3', '2024-12-07', 'Alex Brown', 'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
-  createData(4, 'Task 4', 'Description 4', '2024-12-08', 'Lucy Green', 'https://i.pravatar.cc/150?img=8', '2024-12-13', 'Pending', 'High', 'Some more comments'),
-  createData(1, 'Task 1', 'Description 1', '2024-12-05', 'John Doe', 'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
-  createData(2, 'Task 2', 'Description 2', '2024-12-06', 'Jane Smith', 'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
-  createData(3, 'Task 3', 'Description 3', '2024-12-07', 'Alex Brown', 'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
-  createData(4, 'Task 4', 'Description 4', '2024-12-08', 'Lucy Green', 'https://i.pravatar.cc/150?img=8', '2024-12-13', 'Pending', 'High', 'Some more comments'),
-  createData(1, 'Task 1', 'Description 1', '2024-12-05', 'John Doe', 'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
-  createData(2, 'Task 2', 'Description 2', '2024-12-06', 'Jane Smith', 'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
-  createData(3, 'Task 3', 'Description 3', '2024-12-07', 'Alex Brown', 'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
-  createData(4, 'Task 4', 'Description 4', '2024-12-08', 'Lucy Green', 'https://i.pravatar.cc/150?img=8', '2024-12-13', 'Pending', 'High', 'Some more comments'),
+  createData(1, 'Task 1', 'Description 1',  'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
+  createData(2, 'Task 2', 'Description 2',  'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
+  createData(3, 'Task 3', 'Description 3',  'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
+  createData(1, 'Task 1', 'Description 1',  'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
+  createData(2, 'Task 2', 'Description 2',  'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
+  createData(3, 'Task 3', 'Description 3',  'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
+  createData(1, 'Task 1', 'Description 1',  'https://i.pravatar.cc/150?img=5', '2024-12-10', 'Pending', 'High', 'Some comments here'),
+  createData(2, 'Task 2', 'Description 2',  'https://i.pravatar.cc/150?img=6', '2024-12-11', 'In Progress', 'Medium', 'More comments'),
+  createData(3, 'Task 3', 'Description 3',  'https://i.pravatar.cc/150?img=7', '2024-12-12', 'Completed', 'Low', 'Additional notes'),
+ 
 ];
 
 export function StickyHeadTable() {
@@ -75,7 +65,7 @@ export function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+    <Paper sx={{ width: '100%', }}>
       <TableContainer
         sx={{
           maxHeight: 440,

@@ -1,142 +1,203 @@
-import React from 'react';
+import React from "react";
+
 import {
-  Avatar,
-  Box,
-  Button,
   Checkbox,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  FormControl,
-  FormControlLabel,
+  Container,
+  Box,
+  TextField,
+  Avatar,
+  Button,
   MenuItem,
   Select,
-  TextField,
+  OutlinedInput,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
 
-
-const AddTaskModal = ({ open, handleClose }) => {
+const AddTask = () => {
   return (
-    
-      <Dialog  fullWidth maxWidth="sm">
-        <DialogTitle sx={{ backgroundColor: '#e0f7fa' }}>Add Task</DialogTitle>
-        <DialogContent>
-          <Box display="flex" flexDirection="column" gap={2} mt={2}>
-            {/* Task Title */}
-            <TextField label="Task Title" variant="outlined" fullWidth />
+    <Container>
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        alignItems="center"
+        justifyContent="center"
+        gap={2}
+        sx={{
+          mt: 3,
+          mb: 3,
+          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+          paddingBottom: "1rem",
+          "@media(max-width:360px)": {
+            boxShadow: "none",
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            backgroundColor: "#e0f7fa",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            p: 2,
+          }}
+        >
+          <Typography variant="h6">Add Task</Typography>
+          <Button sx={{ fontSize: "1rem" }}>✖</Button>
+        </Box>
 
-            {/* Task Description */}
-            <TextField
-              label="Task Description"
-              variant="outlined"
-              fullWidth
-              multiline
-              rows={3}
-            />
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          {/* Label above input */}
+          <Typography variant="subtitle2">Title</Typography>
 
-            {/* Created Date */}
-            <TextField
-              label="Created Date"
+          {/* Search Input */}
+          <OutlinedInput
+            sx={{ height: "3rem" }}
+            id="search-task"
+            type="text"
+            placeholder="title"
+            fullWidth
+          />
+        </Box>
+
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          {/* Label above input */}
+          <Typography variant="subtitle2">Description</Typography>
+
+          <TextField
+            placeholder="Enter description"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={3}
+          />
+        </Box>
+        {/* Assign To */}
+
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          <Typography variant="subtitle2">Assigned To</Typography>
+
+          <Box display="flex" gap={2}>
+            <Checkbox />
+            <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/150?img=7" />
+            <Typography sx={{ marginTop: "8px" }}>james cotline</Typography>
+          </Box>
+
+          <Box display="flex" gap={2}>
+            <Checkbox />
+            <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/150?img=5" />
+            <Typography sx={{ marginTop: "8px" }}>james kohli</Typography>
+          </Box>
+
+          <Box display="flex" gap={2}>
+            <Checkbox />
+            <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/150?img=5" />
+            <Typography sx={{ marginTop: "8px" }}>james warner</Typography>
+          </Box>
+        </Box>
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+          sx={{
+            display: "flex",
+
+            gap: 1,
+          }}
+        >
+          <Box
+            flexBasis={{ xs: "100%", sm: "50%" }}
+            maxWidth={{ xs: "100%", sm: "50%" }}
+          >
+            <Typography variant="subtitle2">Due Date</Typography>
+
+            <OutlinedInput
+              sx={{ height: "3rem" }}
+              id="search-task"
               type="date"
-              InputLabelProps={{ shrink: true }}
+              placeholder="title"
               fullWidth
-            />
-
-            {/* Created By */}
-            <TextField label="Created By" variant="outlined" fullWidth />
-
-            {/* Assign To */}
-            <Box>
-              <Typography variant="h6" gutterBottom>
-                Assigned To
-              </Typography>
-              <FormControl component="fieldset">
-                <Box display="flex" alignItems="center" gap={1}>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={<Box display="flex" alignItems="center" gap={1}>
-                      <Avatar src="https://i.pravatar.cc/150?img=5" alt="Emily Johnson" />
-
-                      <Typography variant="subtitle1">James Forbes</Typography>
-                    </Box>}
-                  />
-                </Box>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={<Box display="flex" alignItems="center" gap={1}>
-                      <Avatar src="https://i.pravatar.cc/150?img=8" alt="Daniel Brown" />
-                      <Typography variant="subtitle1">John Robles</Typography>
-                    </Box>}
-                  />
-                </Box>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={<Box display="flex" alignItems="center" gap={1}>
-                     <Avatar src="https://i.pravatar.cc/150?img=7" alt="Sophia Lee" />
-                      <Typography variant="subtitle1">Mary Gant</Typography>
-                    </Box>}
-                  />
-                </Box>
-              </FormControl>
-            </Box>
-
-            {/* Follow-up Date */}
-            <TextField
-              label="Follow-up Date"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-            />
-
-            {/* Status */}
-            <FormControl fullWidth>
-              <Select defaultValue="" displayEmpty>
-                <MenuItem value="" disabled>
-                  Status
-                </MenuItem>
-                <MenuItem value="Not Started">Not Started</MenuItem>
-                <MenuItem value="In Progress">In Progress</MenuItem>
-                <MenuItem value="Completed">Completed</MenuItem>
-              </Select>
-            </FormControl>
-
-            {/* Priority */}
-            <FormControl fullWidth>
-              <Select defaultValue="" displayEmpty>
-                <MenuItem value="" disabled>
-                  Priority
-                </MenuItem>
-                <MenuItem value="Low">Low</MenuItem>
-                <MenuItem value="Medium">Medium</MenuItem>
-                <MenuItem value="High">High</MenuItem>
-              </Select>
-            </FormControl>
-
-            {/* Comments */}
-            <TextField
-              label="Comments"
-              variant="outlined"
-              fullWidth
-              multiline
-              rows={3}
             />
           </Box>
-        </DialogContent>
-        <DialogActions>
-          <Button  variant="outlined">
-            Close
-          </Button>
-          <Button variant="contained" color="success">
-            Add Task
-          </Button>
-        </DialogActions>
-      </Dialog>
-   
+
+          <Box
+            flexBasis={{ xs: "100%", sm: "50%" }}
+            maxWidth={{ xs: "100%", sm: "50%" }}
+          >
+            <Typography variant="subtitle2">Status</Typography>
+
+            <Select sx={{ height: "3rem" }} displayEmpty fullWidth>
+              <MenuItem value="All">All</MenuItem>
+              <MenuItem value="java">Java</MenuItem>
+              <MenuItem value="python">Python</MenuItem>
+              <MenuItem value="javascript">JavaScript</MenuItem>
+            </Select>
+          </Box>
+        </Box>
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+        >
+          <Typography variant="subtitle2">Priority</Typography>
+
+          <Select sx={{ height: "3rem" }} displayEmpty fullWidth>
+            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="java">Java</MenuItem>
+            <MenuItem value="python">Python</MenuItem>
+            <MenuItem value="javascript">JavaScript</MenuItem>
+          </Select>
+        </Box>
+
+        <Box
+          flexBasis={{ xs: "100%", sm: "95%" }}
+          maxWidth={{ xs: "100%", sm: "95%" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          {/* Label above input */}
+          <Typography variant="subtitle2">Comments</Typography>
+
+          <TextField
+            placeholder="Enter comments"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={3}
+          />
+        </Box>
+        <Box display="flex" justifyContent="end" width="95%" gap={2}>
+          <Button variant="outlined">close</Button>
+          <Button variant="contained">Add Task</Button>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 
-export default AddTaskModal;
+export default AddTask;

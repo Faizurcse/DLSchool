@@ -1,5 +1,7 @@
 
 .MuiContainer-root{
-   
-    max-width: 1300px !important
+    max-width: 1375px !important;
+    padding-left: 0px; 
+    padding-right: 0px; 
 }
+

@@ -9,6 +9,7 @@ import AddTask from './Task/AddTask/AddTask';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./pannle.css"
 import { Typography } from '@mui/material';
+import Description from './Task/DetaliedDescription/Description';
 
 function LeftPannel() {
   return (
@@ -27,13 +28,12 @@ function LeftPannel() {
           },
         ]}
       >
-        <DashboardLayout
-       className="faiz"
-        >
+        <DashboardLayout>
           <Routes>
             <Route path="/" element={<Typography>Faiz</Typography>} />
             <Route path="/task" element={<TaskTable />} />
             <Route path="/task/addtask" element={<AddTask />} />
+            <Route path="/task/description" element={<Description />} />
           </Routes>
         </DashboardLayout>
       </AppProvider>

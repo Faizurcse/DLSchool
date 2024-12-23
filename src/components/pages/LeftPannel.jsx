@@ -6,10 +6,11 @@ import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import TaskTable from './Task/TaskTable/TaskTable';
 import AddTask from './Task/AddTask/AddTask';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import "./pannle.css"
-import { Typography } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import "./pannle.css";
+// import { Typography } from '@mui/material';
 import Description from './Task/DetaliedDescription/Description';
+import Dashboard from './Dashboard/Dashboard';
 
 function LeftPannel() {
   return (
@@ -30,7 +31,8 @@ function LeftPannel() {
       >
         <DashboardLayout>
           <Routes>
-            <Route path="/" element={<Typography>Faiz</Typography>} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Dashboard />} />
             <Route path="/task" element={<TaskTable />} />
             <Route path="/task/addtask" element={<AddTask />} />
             <Route path="/task/description" element={<Description />} />

@@ -21,11 +21,13 @@ function LeftPannel() {
             segment: 'home',
             title: 'Home',
             icon: <HomeIcon />,
+             path: '/home',
           },
           {
             segment: 'task',
             title: 'Task',
             icon: <DescriptionIcon />,
+             path: '/task',
           },
         ]}
       >
